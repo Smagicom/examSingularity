@@ -1,0 +1,37 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:15
+    container_name: db_app
+    command: -p 1221
+    expose:
+      - 1221
+    env_file:
+      - .env-non-dev
+
+
+  app:
+    build:
+      context: .
+    env_file:
+      - .env-non-dev
+    container_name: fastapi_app
+    command: ["/fastapi_app/docker/app.sh"]
+    ports:
+      - 81:8000
+    depends_on:
+      - db
+
+
+  grafana:
+    image: grafana/grafana:8.4.5
+    container_name: grafana
+    ports:
+     - 3030:3000
+    depends_on:
+     - db
+    restart: unless-stopped
+    
+    
+
+ 
