@@ -26,8 +26,6 @@ jobs:
       run: kubectl apply -f grafana.yaml
 
 
-jobs:
-
     steps:
     - name: install ssh keys
       run: |
