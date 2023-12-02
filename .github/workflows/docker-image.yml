@@ -8,22 +8,22 @@ on:
 
 jobs:
 
-  build:
+  # build:
 
-    runs-on: ubuntu-latest
+  #   runs-on: ubuntu-latest
 
-    steps:
-    - name: Build the Docker image
-      run: docker compose up -d
+  #   steps:
+  #   - name: Build the Docker image
+  #     run: docker compose up -d
 
-    - name : Kubernetes app
-      run: kubectl apply -f app.yaml
+  #   - name : Kubernetes app
+  #     run: kubectl apply -f app.yaml
 
-    - name: Kubernetes db
-      run: kubectl apply -f db.yaml
+  #   - name: Kubernetes db
+  #     run: kubectl apply -f db.yaml
 
-    - name: Kubernetes db
-      run: kubectl apply -f grafana.yaml
+  #   - name: Kubernetes db
+  #     run: kubectl apply -f grafana.yaml
       
 
   push:
