@@ -31,7 +31,7 @@ jobs:
         ssh-keyscan -p 2222 -H 45.8.119.241  > ~/.ssh/known_hosts
     - name: сonnect and pull
       run: |
-        ssh -T ***@*** -p *** << 'EOF'
+        ssh -T ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} << 'EOF'
         cd /jusan/examSingularity &&
         git add docker-compose.yml &&
         git commit -m "Committing local changes" &&
