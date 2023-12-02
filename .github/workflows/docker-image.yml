@@ -31,13 +31,13 @@ jobs:
         ssh-keyscan -p 2222 -H 45.8.119.241  > ~/.ssh/known_hosts
     - name: сonnect and pull
       run: |
-          ssh -T ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} << 'EOF'
-            cd /jusan/examSingularity &&
-            git fetch origin devops &&
-            git checkout devops &&
-            git pull origin devops &&
-            exit
-          EOF
+        ssh -T ***@*** -p *** << 'EOF'
+        cd /jusan/examSingularity &&
+        git add docker-compose.yml &&
+        git commit -m "Committing local changes" &&
+        git pull origin devops &&
+        exit
+        EOF
       
     - name: cleanup
       run: rm -rf ~/.ssh
