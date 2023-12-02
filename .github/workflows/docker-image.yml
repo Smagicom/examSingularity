@@ -39,7 +39,7 @@ jobs:
         ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
         
     - name: connect and pull
-      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST -p secrets.SSH_PORT }} "cd ${{ /jusan/examSingularity }} && git checkout ${{ https://https://github.com/Smagicom/examSingularity/tree/main }} && git pull && exit"
+      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} -p ${{secrets.SSH_PORT }} "cd ${{ /jusan/examSingularity }} && git checkout ${{ https://https://github.com/Smagicom/examSingularity/tree/main }} && git pull && exit"
       
     - name: cleanup
       run: rm -rf ~/.ssh
