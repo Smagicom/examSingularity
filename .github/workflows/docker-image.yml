@@ -28,7 +28,7 @@ jobs:
          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
     - name: test connction2
       run:
-        ssh-keyscan -H 45.8.119.241 -p ${{secrets.SSH_PORT}} > ~/.ssh/known_hosts
+        ssh-keyscan -H 45.8.119.241 -p 2222 > ~/.ssh/known_hosts
     - name: connect and pull
       run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} -p ${{secrets.SSH_PORT}} "cd  /jusan/examSingularity && git checkout  https://https://github.com/Smagicom/examSingularity/tree/main && git pull && exit"
       
