@@ -12,7 +12,9 @@ jobs:
     steps:
 
     - name: docker compose test
-      run: test.sh  
+      run:  chmod +x /test.sh
+         ./test.sh
+      shell: bash 
 
     - name: kuber app
       run: kubectl apply -f app.yaml
