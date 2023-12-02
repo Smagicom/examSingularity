@@ -12,7 +12,7 @@ jobs:
     steps:
 
     - name: docker compose test
-      run: ./test.sh  
+      run: test.sh  
 
     - name: kuber app
       run: kubectl apply -f app.yaml
@@ -25,25 +25,25 @@ jobs:
 
 
 
-  push:
+  # push:
   
-    runs-on: ubuntu-latest
+  #   runs-on: ubuntu-latest
     
     
-    steps:
-    - name: install ssh keys
-      run: install -m 600 -D /dev/null ~/.ssh/id_rsa
+  #   steps:
+  #   - name: install ssh keys
+  #     run: install -m 600 -D /dev/null ~/.ssh/id_rsa
        
         
 
-    - name: test connction
-      run:
-         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-    - name: test connction2
-      run:
-        ssh-keyscan -p 2222 -H 45.8.119.241  > ~/.ssh/known_hosts
-    - name: сonnect and pull
-      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p 2222 "cd /jusan/examSingularity1  && git pull https://github.com/Smagicom/examSingularity.git  devops && exit"
+  #   - name: test connction
+  #     run:
+  #        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+  #   - name: test connction2
+  #     run:
+  #       ssh-keyscan -p 2222 -H 45.8.119.241  > ~/.ssh/known_hosts
+  #   - name: сonnect and pull
+  #     run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p 2222 "cd /jusan/examSingularity1  && git pull https://github.com/Smagicom/examSingularity.git  devops && exit"
       
     - name: cleanup
       run: rm -rf ~/.ssh
