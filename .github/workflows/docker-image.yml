@@ -10,8 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Docker compose
-      run: docker compose up -d
 
     - name: kuber app
       run: kubectl apply -f app.yaml
