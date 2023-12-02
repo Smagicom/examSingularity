@@ -45,7 +45,7 @@ jobs:
   #   - name: сonnect and pull
   #     run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p 2222 "cd /jusan/examSingularity1  && git pull https://github.com/Smagicom/examSingularity.git  devops && exit"
       
-    - name: cleanup
-      run: rm -rf ~/.ssh
+    # - name: cleanup
+    #   run: rm -rf ~/.ssh
    
     
