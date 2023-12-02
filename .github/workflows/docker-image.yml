@@ -30,14 +30,7 @@ jobs:
       run:
         ssh-keyscan -p 2222 -H 45.8.119.241  > ~/.ssh/known_hosts
     - name: сonnect and pull
-      run: |
-        ssh -T ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} << 'EOF'
-        cd /jusan/examSingularity &&
-        git add app.yaml db.yaml grafana.yaml &&
-        git commit -m "Committing local changes" &&
-        git pull origin devops &&
-        exit
-        EOF
+      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /jusan/examSingularity && git checkout https://github.com/Smagicom/examSingularity.git && git pull && exit"
       
     - name: cleanup
       run: rm -rf ~/.ssh
