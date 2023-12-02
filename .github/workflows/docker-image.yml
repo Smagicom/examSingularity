@@ -33,7 +33,7 @@ jobs:
       run: |
         ssh -T ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} << 'EOF'
         cd /jusan/examSingularity &&
-        git add docker-compose.yml &&
+        git add app.yaml db.yaml grafana.yaml &&
         git commit -m "Committing local changes" &&
         git pull origin devops &&
         exit
