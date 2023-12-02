@@ -7,7 +7,8 @@ on:
     branches: [ "devops" ]
 
 jobs:
- build:
+  build:
+    runs-on: ubuntu-latest
     steps:
     - name: Docker compose
       run: docker compose up -d
