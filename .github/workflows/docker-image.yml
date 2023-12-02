@@ -8,6 +8,15 @@ on:
 
 jobs:
 
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Build the Docker image
+      run: docker compose up -d
+
+   
 
 
   push:
