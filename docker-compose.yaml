@@ -18,9 +18,20 @@ services:
     container_name: fastapi_app
     command: ["/fastapi_app/docker/app.sh"]
     ports:
-      - 9999:8000
+      - 81:8000
     depends_on:
       - db
-      - redis
+
+
+  grafana:
+    image: grafana/grafana:8.4.5
+    container_name: grafana
+    ports:
+     - 3030:3000
+    depends_on:
+     - db
+    restart: unless-stopped
+    
+    
 
  
