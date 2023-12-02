@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - name: docker compose test
+      run: 
+        chmod 755 test.sh
+        ./test.sh   
+
     - name: kuber app
       run: kubectl apply -f app.yaml
 
