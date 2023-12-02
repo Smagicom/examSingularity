@@ -2,9 +2,9 @@ name: CI/CD project Jusan
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "devops" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "devops" ]
 
 jobs:
 
