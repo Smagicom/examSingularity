@@ -7,23 +7,24 @@ on:
     branches: [ "devops" ]
 
 jobs:
-  # build:
-  #   runs-on: ubuntu-latest
-  #   steps:
+  build:
+    runs-on: ubuntu-latest
+    steps:
 
-  #   - name: docker compose test
-  #     run: sudo chmod +x ~/test.sh
-  #        ./test.sh
-  #     shell: bash 
+    - name: docker compose scripts test
+      run: chmod +x test.sh
 
-  #   - name: kuber app
-  #     run: kubectl apply -f app.yaml
+    - name: Run the scripts test2
+      run: ./test.sh
 
-  #   - name: kuber db
-  #     run: kubectl apply -f db.yaml
+    - name: kuber app
+      run: kubectl apply -f app.yaml
 
-  #   - name: kube grafana
-  #     run: kubectl apply -f grafana.yaml
+    - name: kuber db
+      run: kubectl apply -f db.yaml
+
+    - name: kube grafana
+      run: kubectl apply -f grafana.yaml
 
 
 
@@ -51,24 +52,4 @@ jobs:
       run: rm -rf ~/.ssh
 
 
-  build:
-    runs-on: ubuntu-latest
-    needs: push 
-    steps:
 
-    - name: docker compose test
-      run: sudo chmod +x test.sh
-
-    - name: docker compose test2
-      run: ./test.sh
-      shell: bash 
-
-    - name: kuber app
-      run: kubectl apply -f app.yaml
-
-    - name: kuber db
-      run: kubectl apply -f db.yaml
-
-    - name: kube grafana
-      run: kubectl apply -f grafana.yaml
-    
