@@ -10,17 +10,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    # - name: cd test
-    #   run: cd /
+    - name: cd test
+      run: cd /
 
     # - name: cat test
-    #   run: cat /jusan/examSingularity1/test.sh
+    #   run: cat /jusan/examSingularity1/test1.sh
 
     - name: docker compose scripts test
-      run: chmod +x /jusan/examSingularity1/test.sh
+      run: chmod +x /jusan/examSingularity1/test1.sh
 
     - name: Run the scripts test2
-      run: ./test.sh
+      run: ./test1.sh
 
     # - name: kuber app
     #   run: kubectl apply -f app.yaml
