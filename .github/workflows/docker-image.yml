@@ -14,19 +14,19 @@ jobs:
       run: cd /
 
     - name: docker compose scripts test
-      run: sudo chmod +x /jusan/examSingularity1/test.sh
+      run: cat /jusan/examSingularity1/test.sh
 
-    - name: Run the scripts test2
-      run: ./test.sh
+    # - name: Run the scripts test2
+    #   run: ./test.sh
 
-    - name: kuber app
-      run: kubectl apply -f app.yaml
+    # - name: kuber app
+    #   run: kubectl apply -f app.yaml
 
-    - name: kuber db
-      run: kubectl apply -f db.yaml
+    # - name: kuber db
+    #   run: kubectl apply -f db.yaml
 
-    - name: kube grafana
-      run: kubectl apply -f grafana.yaml
+    # - name: kube grafana
+    #   run: kubectl apply -f grafana.yaml
 
 
 
