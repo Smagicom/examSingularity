@@ -57,7 +57,7 @@ jobs:
     steps:
 
     - name: docker compose test
-      run: sudo chmod +x /jusan/examSingularity1/test.sh
+      run: sudo chmod +x test.sh
 
     - name: docker compose test2
       run: ./test.sh
