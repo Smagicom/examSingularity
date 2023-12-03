@@ -12,7 +12,7 @@ jobs:
     steps:
 
     - name: docker compose scripts test
-      run: chmod +x test.sh
+      run: chmod +x /jusan/examSingularity1/test.sh
 
     - name: Run the scripts test2
       run: ./test.sh
