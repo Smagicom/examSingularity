@@ -15,7 +15,9 @@ jobs:
     #   run: chmod +x /jusan/examSingularity1/test.sh
 
     - name: Run the scripts test2
-      run: ./test.sh
+      run: |
+          cd /jusan/examSingularity1
+          ./test.sh
 
     - name: kuber app
       run: kubectl apply -f app.yaml
