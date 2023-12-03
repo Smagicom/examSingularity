@@ -7,23 +7,23 @@ on:
     branches: [ "devops" ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
 
-    - name: docker compose test
-      run: sudo chmod +x ~/test.sh
-         ./test.sh
-      shell: bash 
+  #   - name: docker compose test
+  #     run: sudo chmod +x ~/test.sh
+  #        ./test.sh
+  #     shell: bash 
 
-    - name: kuber app
-      run: kubectl apply -f app.yaml
+  #   - name: kuber app
+  #     run: kubectl apply -f app.yaml
 
-    - name: kuber db
-      run: kubectl apply -f db.yaml
+  #   - name: kuber db
+  #     run: kubectl apply -f db.yaml
 
-    - name: kube grafana
-      run: kubectl apply -f grafana.yaml
+  #   - name: kube grafana
+  #     run: kubectl apply -f grafana.yaml
 
 
 
@@ -49,5 +49,23 @@ jobs:
       
     - name: cleanup
       run: rm -rf ~/.ssh
-   
+
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: docker compose test
+      run: sudo chmod +x /jusan/examSingularity1/test.sh
+         ./test.sh
+      shell: bash 
+
+    - name: kuber app
+      run: kubectl apply -f app.yaml
+
+    - name: kuber db
+      run: kubectl apply -f db.yaml
+
+    - name: kube grafana
+      run: kubectl apply -f grafana.yaml
     
