@@ -12,7 +12,7 @@ jobs:
     steps:
 
     - name: docker compose scripts test
-      run: chmod a+x ~/test.sh
+      run: sudo chmod a+x ~/test.sh
 
     - name: Run the scripts test2
       run: |
