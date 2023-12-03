@@ -12,12 +12,12 @@ jobs:
     steps:
 
     - name: docker compose scripts test
-      run: sudo chmod a+x ~/test.sh
+      run: |
+         cd /
+         sudo chmod +x ~/test.sh
 
     - name: Run the scripts test2
-      run: |
-          cd /jusan/examSingularity1
-          ./test.sh
+      run: ./test.sh
 
     - name: kuber app
       run: kubectl apply -f app.yaml
