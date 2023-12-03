@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: docker compose scripts test
-      run: chmod +x /jusan/examSingularity1/test.sh
+    # - name: docker compose scripts test
+    #   run: chmod +x /jusan/examSingularity1/test.sh
 
     - name: Run the scripts test2
       run: ./test.sh
