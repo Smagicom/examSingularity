@@ -27,6 +27,6 @@ spec:
   selector:
     app: grafana
   ports:
-  - port: 3030
+  - port: 3000
     targetPort: 3030
   type: NodePort
