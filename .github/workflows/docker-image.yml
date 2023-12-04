@@ -7,20 +7,14 @@ on:
     branches: [ "devops" ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: cd test
-      run: cd /jusan/examSingularity1
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+    # - name: docker compose scripts test
+    #   run: chmod +x /jusan/examSingularity1/test1.sh
 
-    # - name: cat test
-    #   run: cat /jusan/examSingularity1/test1.sh
-
-    - name: docker compose scripts test
-      run: chmod +x /jusan/examSingularity1/test1.sh
-
-    - name: Run the scripts test2
-      run: ./test1.sh
+    # - name: Run the scripts test2
+    #   run: ./test1.sh
 
     # - name: kuber app
     #   run: kubectl apply -f app.yaml
@@ -52,6 +46,12 @@ jobs:
         ssh-keyscan -p 2222 -H 45.8.119.241  > ~/.ssh/known_hosts
     - name: сonnect and pull
       run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p 2222 "cd /jusan/examSingularity1  && git pull https://github.com/Smagicom/examSingularity.git  devops && exit"
+    
+    - name: docker compose scripts test
+      run: chmod +x /jusan/examSingularity1/test1.sh
+
+    - name: Run the scripts test2
+      run: ./test1.sh
       
     - name: cleanup
       run: rm -rf ~/.ssh
