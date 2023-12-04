@@ -10,8 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    # - name: docker compose scripts test
-    #   run: chmod +x test1.sh
 
     - name: checkout
       uses: actions/checkout@v1
@@ -19,8 +17,8 @@ jobs:
     - name: Run the scripts test2
       run: docker-compose -f ./docker-compose.yaml up -d --build
 
-    - name: kuber app
-      run: kubectl apply -f app.yaml
+    # - name: kuber app
+    #   run: kubectl apply -f app.yaml
 
     # - name: kuber db
     #   run: kubectl apply -f db.yaml
