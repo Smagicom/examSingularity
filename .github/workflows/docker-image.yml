@@ -13,8 +13,11 @@ jobs:
     # - name: docker compose scripts test
     #   run: chmod +x test1.sh
 
+    - name: checkout
+      uses: actions/checkout@v1
+
     - name: Run the scripts test2
-      run: docker-compose up -d
+      run: docker-compose -f "docker-compose.yml" up -d --build
 
     # - name: kuber app
     #   run: kubectl apply -f app.yaml
