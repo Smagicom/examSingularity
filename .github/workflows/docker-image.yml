@@ -19,8 +19,8 @@ jobs:
     - name: Run the scripts test2
       run: docker-compose -f ./docker-compose.yaml up -d --build
 
-    # - name: kuber app
-    #   run: kubectl apply -f app.yaml
+    - name: kuber app
+      run: kubectl apply -f app.yaml
 
     # - name: kuber db
     #   run: kubectl apply -f db.yaml
