@@ -14,7 +14,7 @@ jobs:
     #   run: chmod +x test1.sh
 
     - name: Run the scripts test2
-      run: ./test1.sh
+      run: docker-compose up -d
 
     # - name: kuber app
     #   run: kubectl apply -f app.yaml
