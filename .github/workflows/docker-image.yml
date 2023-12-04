@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: cd test
-      run: cd /
+      run: cd /jusan/examSingularity1
 
     # - name: cat test
     #   run: cat /jusan/examSingularity1/test1.sh
