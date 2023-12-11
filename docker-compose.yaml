@@ -27,7 +27,7 @@ services:
     image: grafana/grafana:8.4.5
     container_name: grafana
     ports:
-     - 3000:3000
+     - 81:3000
     depends_on:
      - db
     restart: unless-stopped
