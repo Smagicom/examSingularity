@@ -18,7 +18,7 @@ services:
     container_name: fastapi_app
     command: ["/fastapi_app/docker/app.sh"]
     ports:
-      - 82:81
+      - 81:8000
     depends_on:
       - db
 
