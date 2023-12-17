@@ -18,7 +18,7 @@ services:
     container_name: fastapi_app
     command: ["/fastapi_app/docker/app.sh"]
     ports:
-      - 85:82
+      - 82:81
     depends_on:
       - db
 
@@ -27,7 +27,7 @@ services:
     image: grafana/grafana:8.4.5
     container_name: grafana
     ports:
-     - 3030:3000
+     - 3000:81
     depends_on:
      - db
     restart: unless-stopped
@@ -38,9 +38,10 @@ services:
     ports:
      - '80:80'
      - '81:81'
-     - '82:81'
-     - '3000:81'
      - '443:443'
+    depends_on:
+     - app
+     - grafana
     volumes:
      - ./data:/data
      - ./letsencrypt:/etc/letsencrypt
