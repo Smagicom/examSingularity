@@ -39,12 +39,12 @@ jobs:
        
         
 
-    - name: test connction
+    - name: ssh private key
       run:
          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-    - name: test connction2
+    - name: add to known hosts
       run:
-        ssh-keyscan -p 2222 -H 45.8.119.241  > ~/.ssh/known_hosts
+        ssh-keyscan -p 2222 -H ${{ secrets.SSH_HOST }}  > ~/.ssh/known_hosts
     - name: сonnect and pull
       run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p 2222 "cd /jusan/examSingularity1  && git pull https://github.com/Smagicom/examSingularity.git  devops && exit"
       
