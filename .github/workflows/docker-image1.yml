@@ -33,7 +33,7 @@ jobs:
       - name: add known hosts
         run: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
       - name: connect
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} "cd /opt/ && git pull https://github.com/Smagicom/examSingularity.git && cd /examSingularity && docker-compose up -d --build"
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} "cd /opt/ && git clone https://github.com/Smagicom/examSingularity.git && cd /examSingularity && docker-compose up -d --build"
       - name: clean
         run: rm -rf ~/.ssh
     
