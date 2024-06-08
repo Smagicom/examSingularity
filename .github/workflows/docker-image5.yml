@@ -31,7 +31,7 @@ jobs:
         run: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
 
       - name: connect and pull 
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} "cd /opt/ && git clone https://github.com/Smagicom/examSingularity.git && echo "docker build" && exit"
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} "cd /temp/ && git clone https://github.com/Smagicom/examSingularity.git && echo "docker build" && exit"
 
       - name: clean
         run: rm -rf ~/.ssh
