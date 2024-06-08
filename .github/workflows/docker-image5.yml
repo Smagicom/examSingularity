@@ -25,13 +25,13 @@ jobs:
         run: install -m 600 -D /dev/null ~/.ssh/id_rsa
 
       - name: write ssh private key
-        run: echo "${{ secret.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
 
       - name: add to known hosts
-        run: ssh-keyscan -p ${{ secret.SSH_PORT }} -H ${{ secret.SSH_HOST }} > ~/.ssh/known_hosts
+        run: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
 
       - name: connect and pull 
-        run: ssh ${{ secret.SSH_USER }}@${{ secret.SSH_HOST }} -p ${{ secret.SSH_PORT }} "cd /opt/ && git clone https://github.com/Smagicom/examSingularity.git main && echo "docker build" && exit"
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} "cd /opt/ && git clone https://github.com/Smagicom/examSingularity.git main && echo "docker build" && exit"
 
       - name: clean
         run: rm -rf ~/.ssh
